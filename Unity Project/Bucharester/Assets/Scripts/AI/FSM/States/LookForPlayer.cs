@@ -7,7 +7,6 @@ public class LookForPlayer : State<Enemy>
     public override void OnEnter(Enemy agent)
     {
         agent.agent.SetDestination(agent.scoutingPoints[0].position);
-
     }
 
     public override void Execute(Enemy agent)
@@ -40,7 +39,6 @@ public class LookForPlayer : State<Enemy>
         }
 
         //forth path
-
         if (agent.nr == 3)
         {
             agent.agent.SetDestination(agent.scoutingPoints[agent.nr].position);

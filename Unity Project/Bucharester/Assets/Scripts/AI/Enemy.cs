@@ -6,16 +6,12 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public NavMeshAgent agent;
-
     float health = 50f;
     float speed = 5f;
-
     public float lookRadius = 2f;
-
     public Transform player;
     public Transform[] scoutingPoints;
     State<Enemy> currentState = null;
-
     public int nr;
 
     void Awake()
@@ -36,25 +32,6 @@ public class Enemy : MonoBehaviour
         currentState = newState;
         currentState.OnEnter(this);
            
-    }
-
-    public void StartScouting()
-    {
-
-        if (targetFound(scoutingPoints[0]))
-            agent.SetDestination(scoutingPoints[1].position);
-
-        if (targetFound(scoutingPoints[1]))
-            agent.SetDestination(scoutingPoints[2].position);
-
-        if (targetFound(scoutingPoints[2]))
-            agent.SetDestination(scoutingPoints[3].position);
-
-        if (targetFound(scoutingPoints[3]))
-            agent.SetDestination(scoutingPoints[0].position);
-
-
-
     }
 
     /// <summary>
