@@ -947,7 +947,6 @@ GameObject:
   - component: {fileID: 1161208562}
   - component: {fileID: 1161208561}
   - component: {fileID: 1161208566}
-  - component: {fileID: 1161208565}
   - component: {fileID: 1161208567}
   m_Layer: 6
   m_Name: Enemy
@@ -1033,20 +1032,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1161208565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161208560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdf0586450bfd64b8b0c4436d4d2217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1161208566}
-  cam: {fileID: 226582466}
 --- !u!195 &1161208566
 NavMeshAgent:
   m_ObjectHideFlags: 0
