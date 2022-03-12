@@ -9,14 +9,17 @@ public class Enemy : MonoBehaviour
     float health = 50f;
     float speed = 5f;
     public float lookRadius = 2f;
+    public float attackRadius = .5f;
     public Transform player;
     public Transform[] scoutingPoints;
     State<Enemy> currentState = null;
     public int nr;
+    public bool hasAttacked = false;
 
     void Awake()
     {
-        ChangeState(new LookForPlayer()); 
+        ChangeState(new LookForPlayer());
+        agent.stoppingDistance = 3.25f;
     }
 
     private void FixedUpdate()
@@ -32,6 +35,16 @@ public class Enemy : MonoBehaviour
         currentState = newState;
         currentState.OnEnter(this);
            
+    }
+
+    public bool IsInAttackingArea()
+    {
+        float distance = (player.position - transform.position).sqrMagnitude;
+
+        if (distance <= attackRadius * attackRadius)
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -53,5 +66,8 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }

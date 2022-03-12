@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 259381325}
   - component: {fileID: 259381324}
   - component: {fileID: 259381328}
+  - component: {fileID: 259381329}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -329,6 +330,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdfd9e4db1a9edd4bb17fe9b07231552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &259381329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259381323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7b6059db9fe2249ad42caa29ed43fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &362766556
@@ -1068,6 +1081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1161208566}
   lookRadius: 12
+  attackRadius: 2
   player: {fileID: 259381327}
   scoutingPoints:
   - {fileID: 1012152964}
@@ -1075,6 +1089,7 @@ MonoBehaviour:
   - {fileID: 1473268543}
   - {fileID: 1674924987}
   nr: 0
+  hasAttacked: 0
 --- !u!1 &1329231815
 GameObject:
   m_ObjectHideFlags: 0
