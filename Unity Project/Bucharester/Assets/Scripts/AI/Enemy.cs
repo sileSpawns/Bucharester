@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
         agent.stoppingDistance = 3.25f;
     }
 
+    
+
     private void FixedUpdate()
     {
         currentState.Execute(this);
