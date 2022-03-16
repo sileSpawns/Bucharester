@@ -6,7 +6,7 @@ public class FollowPlayerState :State<Enemy>
 {
     public override void OnEnter(Enemy agent)
     {
-        agent.hasAttacked = false;
+        //agent.hasAttacked = false;
         Debug.Log("Following Player State");
     }
 

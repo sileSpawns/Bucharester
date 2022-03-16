@@ -10,11 +10,14 @@ public class Enemy : MonoBehaviour
     float speed = 5f;
     public float lookRadius = 2f;
     public float attackRadius = .5f;
+    public float attackCooldown;
     public Transform player;
     public Transform[] scoutingPoints;
     State<Enemy> currentState = null;
     public int nr;
     public bool hasAttacked = false;
+
+    private bool timerStarted = false;
 
     void Awake()
     {
@@ -27,6 +30,22 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         currentState.Execute(this);
+    }
+
+    private void Update()
+    {
+        if (hasAttacked && !timerStarted)
+        {
+            timerStarted = true;
+            StartCoroutine(TimerCoroutine(attackCooldown));
+        }
+    }
+
+    IEnumerator TimerCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        hasAttacked = false;
+        timerStarted = false;
     }
 
     public void ChangeState(State<Enemy> newState)
