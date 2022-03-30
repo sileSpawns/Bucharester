@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         {
             healthCounter -= amount;
             UpdateHearts();
-            for (int i = healthCounter - 1; i < healthCounter + amount - 1; i++)
+            for (int i = healthCounter; i < healthCounter + amount; i++)
             {
                 hearts[i].GetComponent<Animator>().SetTrigger("fade");
             }
